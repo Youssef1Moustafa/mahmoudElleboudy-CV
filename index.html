@@ -21,11 +21,13 @@
         }
         .cv-container {
             display: flex;
-            width: 21cm;
-            min-height: 29.7cm;
+            flex-direction: row;
+            width: 100%;
+            max-width: 1200px;
             background: white;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             margin: 0 auto;
+            border-radius: 8px;
         }
         .left-column {
             flex: 7;
@@ -144,14 +146,48 @@
             margin-bottom: 10px;
             text-align: center;
         }
-        @media print {
-            body {
-                padding: 0;
-                background: white;
-            }
+
+        /* ✅ Responsiveness */
+        @media (max-width: 992px) {
             .cv-container {
-                box-shadow: none;
-                width: 100%;
+                flex-direction: column;
+            }
+            .left-column {
+                border-right: none;
+                border-bottom: 2px solid #e0e0e0;
+            }
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+            .name {
+                font-size: 24px;
+            }
+            .job-title {
+                font-size: 18px;
+            }
+        }
+        @media (max-width: 480px) {
+            .cv-container {
+                padding: 0;
+            }
+            .left-column, .right-column {
+                padding: 15px;
+            }
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            .name {
+                font-size: 20px;
+            }
+            .job-title {
+                font-size: 16px;
             }
         }
     </style>
@@ -186,13 +222,7 @@
                 <div class="section-title">الخبرة العمليّة</div>
                 <div class="content">
 
-                    <div class="experience-item">
-                        <div class="date">مايو 2024 - مارس 2025</div>
-                        <div>مؤسسة الطائر للسفر والسياحة </div>
-                        <div>محاسب مبيعات دوام جزئي</div>
-                    </div>
-
-                    <div class="experience-item">
+                                        <div class="experience-item">
                         <div class="date">سبتمبر 2024 - الوقت الحاضر</div>
                         <div>شركة عبور الوطن للشحن والخدمات اللوجستية </div>
                         <div>محاسب مبيعات دوام جزئي</div>
@@ -203,6 +233,12 @@
                         <div>مجموعة عبدالملاك مشاري الحمود للمحاماة </div>
                         <div>محاسب دوام جزئي</div>
                     </div>
+
+                    <div class="experience-item">
+                        <div class="date">مايو 2024 - مارس 2025</div>
+                        <div>مؤسسة الطائر للسفر والسياحة </div>
+                        <div>محاسب مبيعات دوام جزئي</div>
+                    </div>
                                       
 
                     <div class="experience-item">
@@ -211,13 +247,12 @@
                         <div>محاسب مبيعات</div>
                     </div>
 
-
                 </div>
             </div>
         </div>
 
         <div class="right-column">
-            <img  class="profile-img" src="mahmoud.jpg" >
+            <img  class="profile-img" src="mahmoud.jpg" alt="صورة شخصية">
             
             <div class="name-title">
                 <div class="name">محمود أحمد اللهودي</div>
